@@ -1,8 +1,12 @@
+//defining product
+
 class Product {
   constructor(name) {
     this.name = name;
   }
 }
+
+//product list example to be replaced by real data
 
 const products = [
   new Product("newproduct1"),
@@ -10,11 +14,13 @@ const products = [
 ];
 
 
-//add product to container
+//create container to display all products
 
 const productsContainer = document.getElementById('products-container');
 
 products.forEach(product => productsContainer.appendChild(createProductCard(product)));
+
+//create product card
 
 function createProductCard(product) {
   const productCard = document.createElement('div');
@@ -25,12 +31,13 @@ function createProductCard(product) {
   const productName = document.createElement('h3');
   productName.textContent = product.name;
 
-//add buttons
+//add view button
 
 const viewButton = document.createElement('button');
 viewButton.textContent = 'view';
 
-// Get the text content of the product name element
+// view button functionality
+
 const productNameText = productName.textContent; 
 
 const encodedProductName = encodeURIComponent(productNameText); 
@@ -38,6 +45,8 @@ const encodedProductName = encodeURIComponent(productNameText);
 viewButton.addEventListener('click', () => {
 window.location.href = `productPage.html?product=${encodedProductName}`;
 });
+
+//add product card to container
 
 productCard.appendChild(productName);
 productCard.appendChild(viewButton);
