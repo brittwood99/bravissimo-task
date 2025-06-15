@@ -7,45 +7,57 @@ const productPageContainer = document.getElementById('product-page-container');
 //load product and basket contents on page load
 
 document.addEventListener('DOMContentLoaded', () => {
-  getProductName();
   loadBasket();
+  getProductName();
 
  });
 
  //get product name from previous view button push
 
 function getProductName(){
+  productPageContainer.innerHTML = '';
   const urlParams = new URLSearchParams(window.location.search);
    productName = urlParams.get('product');
-
-  const productInfoContainer = document.getElementById('product-info-container'); 
-
-  if (productName) {
     const decodedProductName = decodeURIComponent(productName);
     const productNameElement = document.createElement('h1'); 
+
+   //show current quantity
+   const quantityCheck = document.createElement('p');
+
+   if (basketMap.size === 0) {
+   } else {
+     basketMap.forEach((quantity, productIdentifier) => { 
  
-//add to basket button
+       // basket item name
+       quantityCheck.textContent = `${productIdentifier}: ${quantity}`; 
+ 
+     });
+   }
 
-    const addButton = document.createElement('button');
-    addButton.id = `add-${productName.replace(/\s+/g, '-')}`;
-    addButton.textContent = '+1';
-    productNameElement.textContent = decodedProductName;
-    addButton.addEventListener("click", addtoBasket);
+   //add button
 
-//add name and button to container
-
-    if (productInfoContainer) {
-      productInfoContainer.appendChild(productNameElement);
-      productInfoContainer.appendChild(addButton);
-    } else {
-      console.error("Product info container not found."); 
+   const addButtonProductPage = document.createElement('button');
+   addButtonProductPage.textContent = 'add to basket';
+   productNameElement.textContent = decodedProductName;
+   addButtonProductPage.addEventListener("click", () => {
+     addtoBasket(decodedProductName);
+     getProductName();
     }
-  } else {
-    console.warn("Product name parameter not found in URL.");
-    if (productInfoContainer) {
-      productInfoContainer.innerHTML = "<p>Product information not available.</p>"; 
-    }
-  }
+     
+     
+    );
+
+   
+
+   productPageContainer.appendChild(productNameElement);
+   productPageContainer.appendChild(addButtonProductPage);
+   productPageContainer.appendChild(quantityCheck);
+   
+  
+
+
+
+
 }
 
 

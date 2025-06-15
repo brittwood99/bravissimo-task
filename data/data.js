@@ -12,4 +12,5 @@ class Product {
     new Product("astrid"),
     new Product("apollo")
   ];
+
   
