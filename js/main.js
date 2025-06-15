@@ -3,16 +3,14 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   loadBasket();
-  loadProducts();
+  console.log('loaded basket, going to load products...');
+  loadProducts(); //links to loadProducts.js and then app.js to start http request for products json
  });
 
 //create container to display all products
 
 const productsContainer = document.getElementById('products-container');
 
-function loadProducts(){
-
-products.forEach(product => productsContainer.appendChild(createProductCard(product)));
 
 //create product card
 
@@ -75,4 +73,4 @@ productCard.appendChild(viewButton);
 //productCard.appendChild(addButton); maybe re-add later
 
 return productCard;
-}}
+}

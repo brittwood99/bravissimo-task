@@ -1,0 +1,15 @@
+[
+    {
+      "id": "astrid",
+      "name": "astrid",
+      "price": 100,
+      "description": "Description for Astrid."
+    },
+    {
+      "id": "apollo",
+      "name": "apollo",
+      "price": 200,
+      "description": "Description for Apollo."
+    }
+  ]
+  
