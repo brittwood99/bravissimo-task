@@ -1,6 +1,4 @@
-//variables
 
-const basketElement = document.getElementById('basket');
 
 // load the basketMap from local storage
 
@@ -41,4 +39,32 @@ function saveBasket() {
   console.log(basketMap);
     localStorage.setItem('basket', JSON.stringify(Array.from(basketMap.entries())));
   }
+
+  function saveBasket2() {}
+
+
+//add to basket function
+
+function test(){
+  console.log("test function called");
+}
+
+function addtoBasket(productName) {
+  console.log("Finished defining addtoBasket."); // Add this
+
+  let clicks=0;
+    clicks++;
+    if (basketMap.has(productName)) {
+      basketMap.set(productName, basketMap.get(productName) + clicks);
+    } else {
+      basketMap.set(productName, clicks);
+    } 
+    
+  saveBasket();
+  
+  }
+//variables
+
+const basketElement = document.getElementById('basket');
+
   

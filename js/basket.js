@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     basketMap.clear();
     saveBasket();
     loadBasket();
+    
    }
 
    const clearBasketButton = document.getElementById('clear-basket-button');

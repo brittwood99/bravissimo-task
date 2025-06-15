@@ -30,18 +30,7 @@ function getProductName(){
     addButton.id = `add-${productName.replace(/\s+/g, '-')}`;
     addButton.textContent = '+1';
     productNameElement.textContent = decodedProductName;
-    addButton.addEventListener("click", function() {
-      let clicks=0;
-        clicks++;
-        if (basketMap.has(productName)) {
-          basketMap.set(productName, basketMap.get(productName) + clicks);
-        } else {
-          basketMap.set(productName, clicks);
-        } 
-        
-      saveBasket();
-      
-      });
+    addButton.addEventListener("click", addtoBasket);
 
 //add name and button to container
 
