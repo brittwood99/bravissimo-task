@@ -84,8 +84,17 @@ viewButton.addEventListener('click', () => {
 window.location.href = `productPage.html?product=${encodedProductName}`;
 });
 
+//placeholder image
+
+const productBoxPlaceholder = document.createElement('div');
+    productBoxPlaceholder.classList.add('product-image-placeholder'); // Add a class for styling
+    productBoxPlaceholder.textContent = productIdentifier;
+
+
+
         //add items to basket container
         basketItemDiv.appendChild(itemElement); 
+        basketItemDiv.appendChild(productBoxPlaceholder);
         basketItemDiv.appendChild(increaseButton); 
         basketItemDiv.appendChild(decreaseButton); 
         basketItemDiv.appendChild(removeButton); 

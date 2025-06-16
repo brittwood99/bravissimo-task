@@ -11,12 +11,33 @@
  border: 1px solid #ccc;
  padding: 10px;
  margin: 10px;
- display: inline-block;
+ display: block;
 }
 
 body {
  font-family: 'Lato', sans-serif;
  text-transform: uppercase;
+}
+
+#basket-container {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.product-image-placeholder {
+ color: lightgrey;
+ border: 2px solid lightgray; /* Pink outline */
+ width: 200px; /* Example width, adjust as needed */
+ height: 150px; /* Example height, adjust as needed */
+ margin: 20px 0; /* Add margin above and below the box */
+ display: flex;
+ justify-content: center; /* Center horizontally */
+ align-items: center; /* Center vertically */
+}
+#product-page-container {
+ margin: 10px;
 }
 
 button {
@@ -36,7 +57,6 @@ nav ul {
  list-style: none;
  padding: 0;
  margin: 0;
- background-color: #f8f8f8;
  overflow: hidden;
 }
 
@@ -64,9 +84,16 @@ nav li a {
  padding: 2px 4px;
 }
 
-h2 {
+.basket-item button:first-of-type,
+.basket-item button:nth-of-type(2) {
+ padding: 2px 4px;
+}
+
+h2, h1 {
  padding-left: 10px;
  padding-right: 10px;
+ margin-top: 10;
+ margin-bottom: 0;
 }
 #search-input {
     margin: 10px;

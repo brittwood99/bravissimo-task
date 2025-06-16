@@ -3,13 +3,25 @@
       "id": "astrid",
       "name": "astrid",
       "price": 100,
-      "description": "Description for Astrid."
+      "description": ""
     },
     {
       "id": "apollo",
       "name": "apollo",
-      "price": 200,
-      "description": "Description for Apollo."
+      "price": 100,
+      "description": ""
+    },
+    {
+      "id": "isla",
+      "name": "isla",
+      "price": 100,
+      "description": ""
+    },
+    {
+      "id": "indie",
+      "name": "indie",
+      "price": 100,
+      "description": ""
     }
   ]
   

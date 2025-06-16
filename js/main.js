@@ -58,6 +58,14 @@ function createProductCard(product) {
   const productCard = document.createElement('div');
   productCard.classList.add('product-card');
 
+  //image placeholder
+
+  const productBoxPlaceholder = document.createElement('div');
+  productBoxPlaceholder.classList.add('product-image-placeholder'); // Add a class for styling
+  productBoxPlaceholder.textContent = product.name;
+
+
+
 //create product heading 
 
   const productName = document.createElement('h3');
@@ -108,6 +116,7 @@ addButton.addEventListener("click", () => {
 //add product card to container
 
 productCard.appendChild(productName);
+productCard.appendChild(productBoxPlaceholder);
 productCard.appendChild(quantityCheck);
 productCard.appendChild(viewButton);
 //productCard.appendChild(addButton); maybe re-add later

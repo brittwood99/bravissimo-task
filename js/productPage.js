@@ -19,7 +19,7 @@ function getProductName(){
   const urlParams = new URLSearchParams(window.location.search);
    productName = urlParams.get('product');
     const decodedProductName = decodeURIComponent(productName);
-    const productNameElement = document.createElement('h1'); 
+    const productNameElement = document.createElement('h2'); 
 
    //show current quantity
    const quantityCheck = document.createElement('p');
@@ -44,9 +44,15 @@ function getProductName(){
      
     );
 
+    const productBoxPlaceholder = document.createElement('div');
+    productBoxPlaceholder.classList.add('product-image-placeholder'); // Add a class for styling
+    productBoxPlaceholder.textContent = decodedProductName;
+
+
    
 
    productPageContainer.appendChild(productNameElement);
+   productPageContainer.appendChild(productBoxPlaceholder);
    productPageContainer.appendChild(addButtonProductPage);
    productPageContainer.appendChild(quantityCheck);
 
