@@ -1,36 +1,35 @@
 
 async function loadProducts() {
   console.log('loading products');
+  
+//try to get the product feed from the json:
 
     try {
-      // when using mock json file, I could get the data like this:
-      //const response = await fetch('data/data.json'); 
-      // but this is how i need to get it by using server side code with node.js talking to the json instead of the front end:
-     //this is a http request:
-      const response = await fetch('/api/products');//this is a route
-      //this sends to a url connected to this web app
-      //need to make my nodejs server respond to requests at this url
+      //1. pull directly from json:
+      const response = await fetch('data/data.json'); 
+
+            //2. http request for node js server:
+            //const response = await fetch('/api/products');
+
       console.log('back to loading products');
-      //throwing error here even though json is at api/products
       console.log(response.status);
+
+      //if error:
+
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       else{
         
       }
-
-      //response
   
-      const products = await response.json(); // Parse the JSON data
+      const products = await response.json(); 
   
-      //printing for proof
+      //if it works:
 
       console.log("Products loaded from data/data.json:", products); // Log for debugging
       console.log("Printing product names:");
-      // Iterate over the products array
       products.forEach(product => {
-        // Access the 'name' property of each product object
         console.log(product.name);
       });
 
