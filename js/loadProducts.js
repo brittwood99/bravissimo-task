@@ -39,11 +39,11 @@ async function loadProducts() {
 
       console.log("Products loaded from data/data.json:", products); // Log for debugging
       console.log("Printing product names:");
-      products.forEach(product => {
-        console.log(product.name);
-        const productCardElement = createProductCard(product); // Get the created product card element
-        productsContainer.appendChild(productCardElement);
-      });
+      //products.forEach(product => {
+       // console.log(product.name);
+       // const productCardElement = createProductCard(product); // Get the created product card element
+       // productsContainer.appendChild(productCardElement);
+     // });
 
       //return
 

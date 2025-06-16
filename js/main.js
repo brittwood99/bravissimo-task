@@ -1,11 +1,50 @@
+// Add a variable to store all fetched products
+let allProducts = [];
 
-//load basket
 
-document.addEventListener('DOMContentLoaded', () => {
+//load basket and products
+
+document.addEventListener('DOMContentLoaded', async () => {
   loadBasket();
-  console.log('loaded basket, going to load products...');
-  loadProducts(); //links to loadProducts.js and then app.js to start http request for products json
- });
+  console.log('loaded basket, going to load products');
+  //loadProducts(); //links to loadProducts.js and then app.js to start http request for products json
+  const products = await loadProducts(); // <-- Await the result of loadProducts()
+  allProducts = products; // Store the fetched products
+  displayProducts(allProducts);
+  console.log('setting up search');
+
+  // Get the search input element and add the event listener here
+  const searchInput = document.getElementById('search-input');
+  if (searchInput) {
+    console.log('got search input');
+     searchInput.addEventListener('input', (event) => {
+       const searchTerm = event.target.value.toLowerCase();
+       const filteredProducts = allProducts.filter(product =>
+         product.name.toLowerCase().includes(searchTerm)
+       );
+       displayProducts(filteredProducts);
+     });
+  } else {
+      console.error('Search input element with ID "search-input" not found.');
+  }
+});
+
+// Function to display products (either all or filtered)
+function displayProducts(productsToDisplay) {
+  productsContainer.innerHTML = ''; // Clear the current products
+
+  if (productsToDisplay.length === 0) {
+    productsContainer.textContent = 'No products found.';
+    return;
+  }
+
+  productsToDisplay.forEach(product => {
+    const productCardElement = createProductCard(product);
+    productsContainer.appendChild(productCardElement);
+  });
+}
+
+
 
 //create container to display all products
 

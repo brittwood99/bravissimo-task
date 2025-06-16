@@ -6,11 +6,5 @@ class Product {
     }
   }
   
-  //product list example to be replaced by real data
-  
-  const products = [
-    new Product("astrid"),
-    new Product("apollo")
-  ];
 
   

@@ -1,0 +1,12 @@
+{
+    "name": "bravissimo-task",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server/app.js",
+    "scripts": {
+      "start": "node server/app.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+  }

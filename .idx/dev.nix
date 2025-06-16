@@ -21,7 +21,7 @@
       previews = {
         web = {
           # node js server command:
-         #  command = ["node" "server/app.js"];
+          # command = ["node" "server/app.js"];
        # old server:
        command = ["python3" "-m" "http.server" "$PORT" "--bind" "0.0.0.0"];
           manager = "web";
