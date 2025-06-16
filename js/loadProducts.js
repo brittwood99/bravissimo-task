@@ -1,3 +1,4 @@
+console.log('loadProducts.js version --- 14:17');
 
 async function loadProducts() {
   console.log('loading products');
@@ -6,10 +7,19 @@ async function loadProducts() {
 
     try {
       //1. pull directly from json:
-      const response = await fetch('data/data.json'); 
+      const response = 
+      ///await fetch('data/data.json'); 
 
             //2. http request for node js server:
             //const response = await fetch('/api/products');
+
+           await fetch('https://3000-firebase-bravissimo-task-1749821916900.cluster-ombtxv25tbd6yrjpp3lukp6zhc.cloudworkstations.dev/api/products');
+
+    console.log('received response from /api/products:');
+    console.log(response); // Log the full Response object
+
+
+            //console logs to check if it is working:
 
       console.log('back to loading products');
       console.log(response.status);
