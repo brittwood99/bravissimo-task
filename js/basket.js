@@ -34,7 +34,12 @@ function renderBasketDisplay() {
       basketItemsContainer.textContent = "Your basket is empty."; 
     } else {
       basketMap.forEach((quantity, productIdentifier) => { 
+        
+        // Create individual container for the basket item
+        const basketItemDiv = document.createElement('div');
+        basketItemDiv.classList.add('basket-item'); // Add a class for styling
 
+     
         // basket item name
         const itemElement = document.createElement('p');
         itemElement.textContent = `${productIdentifier}: ${quantity}`; 
@@ -80,11 +85,13 @@ window.location.href = `productPage.html?product=${encodedProductName}`;
 });
 
         //add items to basket container
-        basketItemsContainer.appendChild(increaseButton); 
-        basketItemsContainer.appendChild(decreaseButton); 
-        basketItemsContainer.appendChild(removeButton); 
-        basketItemsContainer.appendChild(viewButton); 
-        basketItemsContainer.appendChild(itemElement); 
+        basketItemDiv.appendChild(itemElement); 
+        basketItemDiv.appendChild(increaseButton); 
+        basketItemDiv.appendChild(decreaseButton); 
+        basketItemDiv.appendChild(removeButton); 
+        basketItemDiv.appendChild(viewButton); 
+        basketItemsContainer.appendChild(basketItemDiv); // Append the div to the main container
+
       });
     }
   } else {

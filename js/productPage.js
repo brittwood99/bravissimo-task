@@ -24,14 +24,11 @@ function getProductName(){
    //show current quantity
    const quantityCheck = document.createElement('p');
 
-   if (basketMap.size === 0) {
+   if (basketMap.has(decodedProductName)) {
+       const quantity = basketMap.get(decodedProductName); // Get the quantity for this product
+       quantityCheck.textContent = `${decodedProductName} in basket: ${quantity}`; // Display the quantity
    } else {
-     basketMap.forEach((quantity, productIdentifier) => { 
- 
-       // basket item name
-       quantityCheck.textContent = `${productIdentifier}: ${quantity}`; 
- 
-     });
+       quantityCheck.textContent = `none in basket`; // This product is not in the basket
    }
 
    //add button
@@ -52,7 +49,7 @@ function getProductName(){
    productPageContainer.appendChild(productNameElement);
    productPageContainer.appendChild(addButtonProductPage);
    productPageContainer.appendChild(quantityCheck);
-   
+
   
 
 
