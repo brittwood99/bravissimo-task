@@ -12,14 +12,6 @@ https://github.com/brittwood99/bravissimo-task.git
 
 I used a mock database for the products by including the data in a json file in the data folder. However, I hosted this on a node server to demonstrate my use of Node.js.
 
-# With more time
-
-As I am used to coding in dart/flutter and using firebase. Switching to html, javascript and node.js was new, and so initally getting to grips with it took some time.
-
-My plan was to then use an external database and SQL instead of the mock json file, but ran out of time.
-
-The user's basket is currently only connected to a map within local storage. With more time I would have connected this to a persistent data store with Node.js along with the product data.
-
 # Versions
 
 node version - v20.11.1
