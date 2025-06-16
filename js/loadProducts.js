@@ -1,4 +1,4 @@
-console.log('loadProducts.js version --- 14:17');
+console.log('loadProducts.js version --- 14:52');
 
 async function loadProducts() {
   console.log('loading products');
@@ -41,6 +41,8 @@ async function loadProducts() {
       console.log("Printing product names:");
       products.forEach(product => {
         console.log(product.name);
+        const productCardElement = createProductCard(product); // Get the created product card element
+        productsContainer.appendChild(productCardElement);
       });
 
       //return

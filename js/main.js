@@ -15,6 +15,7 @@ const productsContainer = document.getElementById('products-container');
 //create product card
 
 function createProductCard(product) {
+  console.log('creating product card');
   const productCard = document.createElement('div');
   productCard.classList.add('product-card');
 
